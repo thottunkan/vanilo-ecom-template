@@ -1,0 +1,91 @@
+@extends('admin.layout.admin-layout')
+
+@section('content')
+
+    <div class="pc-container">
+        <div class="pc-content">
+
+            @include('admin.includes.page-header', [
+                'button_text' => null,
+                'url' => null,
+                'title' => 'Edit FAQ Page',
+                'links' => ['Pages', 'Edit FAQ Page'],
+            ])
+
+            @php
+                $page_content = json_decode($faq_page->page_contents, true) ?? [];
+            @endphp
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+
+                        <div class="card-header">
+                            <h5>Edit FAQ Page</h5>
+                        </div>
+
+                        <div class="card-body">
+
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul class="mb-0">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
+                            <form action="{{ route('admin.pagecontent.faq.update', $faq_page->id) }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                @method('PUT')
+
+                                <div class="mb-3">
+                                    <label for="">Title</label>
+                                    <input type="text" name="faq_title" value="{{ $page_content['faq_title'] ?? '' }}" class="form-control" id="">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="">Text</label>
+                                    <input type="text" name="faq_text" value="{{ $page_content['faq_text'] ?? '' }}" class="form-control" id="">
+                                </div>
+                                {{-- Status --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Status</label>
+
+                                    <select name="status" class="form-select">
+                                        <option value="">Select Status</option>
+
+                                        <option value="active"
+                                            {{ old('status', $faq_page->status) == 'active' ? 'selected' : '' }}>
+                                            Active
+                                        </option>
+
+                                        <option value="inactive"
+                                            {{ old('status', $faq_page->status) == 'inactive' ? 'selected' : '' }}>
+                                            Inactive
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-primary">
+                                        Update
+                                    </button>
+
+                                    <a href="{{ route('admin.pagecontent.index') }}" class="btn btn-secondary">
+                                        Cancel
+                                    </a>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+@endsection

@@ -1,0 +1,15 @@
+name	  sku	  price	description	stock	color	size	length	width	height	tax_category_id	tax_rate_id	tax_rate	state	categories	    related_products	attributes	        variants
+iPhone 16	IP16	999	Apple Phone	100	    Black	 XL	    10	    5	    2	    1	            2	        5	        active	Mobiles,Apple	SKU1001,SKU1002	    {"Brand":"Apple"}	[{"sku":"IP16-BLK","price":999}]
+
+<form action="{{ route('admin.product.import') }}"
+      method="POST"
+      enctype="multipart/form-data">
+    @csrf
+
+    <input type="file" name="file">
+
+    <button type="submit">
+        Import Products
+    </button>
+</form>
+

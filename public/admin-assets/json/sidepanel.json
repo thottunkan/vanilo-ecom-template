@@ -1,0 +1,55 @@
+{
+  "sidebar": [
+    {
+      "label": "Catalog",
+      "icon": "ph ph-package",
+      "children": [
+        {
+          "label": "Products",
+          "children": [
+            {
+              "label": "All Products"
+            },
+            {
+              "label": "Categories"
+            },
+            {
+              "label": "Brands"
+            },
+            {
+              "label": "Out of Stock"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Customers",
+      "icon": "ph ph-users",
+      "children": [
+        {
+          "label": "Customers",
+          "children": [
+            {
+              "label": "All Customers"
+            },
+            {
+              "label": "Add Customer"
+            }
+          ]
+        },
+        {
+          "label": "Reviews",
+          "children": [
+            {
+              "label": "All Reviews"
+            },
+            {
+              "label": "Pending Reviews"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
