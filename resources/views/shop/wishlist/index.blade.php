@@ -1,0 +1,3 @@
+@extends('shop.layout.shop-layout')
+@section('title','Wishlist')
+@section('content')<div class="container py-5"><h1 class="section-title mb-4">Wishlist</h1><div class="row g-4">@forelse($items as $item)<div class="col-sm-6 col-lg-3">@if($item->product)@include('shop.partials.product-card',['product'=>$item->product])<form method="POST" action="{{ route('shop.wishlist.delete',$item->master_product_id) }}">@csrf @method('DELETE')<button class="btn btn-link text-danger w-100">Remove</button></form>@endif</div>@empty<div class="col-12"><div class="alert alert-light">Your wishlist is empty.</div></div>@endforelse</div></div>@endsection

@@ -1,0 +1,5 @@
+taxonomy,parent_category,name,slug,priority,subtitle,excerpt,description,meta_title,meta_keywords,meta_description,image_path
+Products,Electronics,Mobile Phones,mobile-phones,1,Smartphones,Mobile devices,All smartphone products,Mobile Phones,"phones,mobile,smartphone",Browse our mobile phones,categories/mobile.jpg
+Products,Mobile Phones,Android Phones,android-phones,2,Android Devices,Android phones,Android smartphones,Android Phones,"android,phones",Best Android phones,categories/android.jpg
+Products,Mobile Phones,iPhones,iphones,3,Apple Phones,Apple smartphones,All Apple iPhones,iPhones,"apple,iphone",Latest Apple iPhones,categories/iphone.jpg
+Blog Categories,,Technology,technology,1,Tech News,Technology articles,All technology blog posts,Technology,"tech,news",Technology articles,blog/technology.jpg
